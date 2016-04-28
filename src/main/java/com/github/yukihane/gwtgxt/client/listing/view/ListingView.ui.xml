@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+  xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:VerticalPanel width="100%">
+      <g:Button ui:field="inputForm" text="input form" width="100%" />
+    </g:VerticalPanel>
+
+</ui:UiBinder>

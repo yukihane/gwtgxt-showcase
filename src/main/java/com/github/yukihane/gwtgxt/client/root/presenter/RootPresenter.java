@@ -2,6 +2,7 @@ package com.github.yukihane.gwtgxt.client.root.presenter;
 
 import com.github.yukihane.gwtgxt.client.root.RootEventBus;
 import com.github.yukihane.gwtgxt.client.root.view.RootView;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.LazyPresenter;
 import java.util.logging.Logger;
@@ -13,5 +14,11 @@ public class RootPresenter extends LazyPresenter <IRootView, RootEventBus> imple
 
     public void onStart() {
         LOGGER.finer("called: onStart");
+    }
+
+    public void onBindListingView(final IsWidget listingView) {
+        LOGGER.finer("called: onbindListingView");
+
+        view.addListingView(listingView);
     }
 }

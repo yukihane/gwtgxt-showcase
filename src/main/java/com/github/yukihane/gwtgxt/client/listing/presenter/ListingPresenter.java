@@ -15,4 +15,13 @@ public class ListingPresenter extends LazyPresenter <IListingView, RootEventBus>
         LOGGER.finer("called: onStart");
     }
 
+    @Override
+    public void bindView() {
+        eventBus.bindListingView(view);
+    }
+
+    @Override
+    public void actInputFormClicked() {
+        LOGGER.finer("called: actInputFormClicked");
+    }
 }

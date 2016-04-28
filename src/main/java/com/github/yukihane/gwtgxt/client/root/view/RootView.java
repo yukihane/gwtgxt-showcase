@@ -5,6 +5,7 @@ import com.github.yukihane.gwtgxt.client.root.presenter.IRootView;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.mvp4g.client.view.ReverseViewInterface;
 import java.util.logging.Logger;
@@ -14,6 +15,8 @@ public class RootView extends DockLayoutPanel implements IRootView, ReverseViewI
     private static final Logger LOGGER = Logger.getLogger(RootView.class.getName());
 
     private IRootPresenter presenter;
+
+    private SplitLayoutPanel layout;
 
     public RootView() {
         super(Unit.EM);
@@ -34,11 +37,21 @@ public class RootView extends DockLayoutPanel implements IRootView, ReverseViewI
 
         LOGGER.finer("called createView");
 
-        final SplitLayoutPanel p = new SplitLayoutPanel();
-        p.addWest(new HTML("navigation"), 128);
-        p.add(new HTML("details"));
+        layout = new SplitLayoutPanel();
 
-        add(p);
+        add(layout);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see
+     * com.github.yukihane.gwtgxt.client.root.presenter.IRootView#addListingView
+     * (com.google.gwt.user.client.ui.IsWidget)
+     */
+    @Override
+    public void addListingView(final IsWidget listingView) {
+        layout.addWest(listingView, 128);
+        layout.add(new HTML("details"));
     }
 
 }
