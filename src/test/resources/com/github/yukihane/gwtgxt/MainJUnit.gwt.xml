@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="Main">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.github.yukihane.gwtgxt.Main' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/Main/greet" class="com.github.yukihane.gwtgxt.server.GreetingServiceImpl" />
+
+</module>
