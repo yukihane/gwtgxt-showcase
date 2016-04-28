@@ -12,6 +12,7 @@
   <properties>
     <!-- Convenience property to set the GWT version -->
     <gwtVersion>2.7.0</gwtVersion>
+    <gxt.version>3.1.1</gxt.version>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -47,6 +48,11 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-dev</artifactId>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt</artifactId>
+      <version>${gxt.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
