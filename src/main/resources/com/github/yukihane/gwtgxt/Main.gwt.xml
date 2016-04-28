@@ -12,6 +12,7 @@
 
   <!-- Other module inherits                                      -->
   <inherits name='com.sencha.gxt.ui.GXT' />
+  <inherits name='com.mvp4g.Mvp4gModule'/>
 
   <!-- GXT Stylesheet -->
   <stylesheet src="reset.css" />
