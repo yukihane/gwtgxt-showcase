@@ -7,8 +7,11 @@ import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.mvp4g.client.view.ReverseViewInterface;
+import java.util.logging.Logger;
 
 public class RootView extends DockLayoutPanel implements IRootView, ReverseViewInterface <IRootPresenter> {
+
+    private static final Logger LOGGER = Logger.getLogger(RootView.class.getName());
 
     private IRootPresenter presenter;
 
@@ -28,6 +31,8 @@ public class RootView extends DockLayoutPanel implements IRootView, ReverseViewI
 
     @Override
     public void createView() {
+
+        LOGGER.finer("called createView");
 
         final SplitLayoutPanel p = new SplitLayoutPanel();
         p.addWest(new HTML("navigation"), 128);
