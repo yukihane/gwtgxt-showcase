@@ -1,6 +1,9 @@
 package com.github.yukihane.gwtgxt.client.root;
 
+import com.github.yukihane.gwtgxt.client.input_form.presenter.IInputFormView;
+import com.github.yukihane.gwtgxt.client.input_form.presenter.InputFormPresenter;
 import com.github.yukihane.gwtgxt.client.listing.presenter.ListingPresenter;
+import com.github.yukihane.gwtgxt.client.root.model.WindowType;
 import com.github.yukihane.gwtgxt.client.root.presenter.RootPresenter;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.mvp4g.client.annotation.Event;
@@ -23,4 +26,16 @@ public interface RootEventBus extends EventBusWithLookup {
      */
     @Event(handlers = RootPresenter.class)
     void bindListingView(IsWidget view);
+
+    /**
+     * @param type
+     */
+    @Event(handlers = RootPresenter.class)
+    void openWindow(WindowType type);
+
+    @Event(handlers = InputFormPresenter.class)
+    void prepareInputForm();
+
+    @Event(handlers = RootPresenter.class)
+    void completePreparation(IsWidget view);
 }

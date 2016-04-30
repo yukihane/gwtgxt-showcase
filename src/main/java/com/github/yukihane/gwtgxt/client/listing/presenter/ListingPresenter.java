@@ -2,6 +2,7 @@ package com.github.yukihane.gwtgxt.client.listing.presenter;
 
 import com.github.yukihane.gwtgxt.client.listing.view.ListingView;
 import com.github.yukihane.gwtgxt.client.root.RootEventBus;
+import com.github.yukihane.gwtgxt.client.root.model.WindowType;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.LazyPresenter;
 import java.util.logging.Logger;
@@ -23,5 +24,7 @@ public class ListingPresenter extends LazyPresenter <IListingView, RootEventBus>
     @Override
     public void actInputFormClicked() {
         LOGGER.finer("called: actInputFormClicked");
+
+        eventBus.openWindow(WindowType.INPUT_FORM);
     }
 }

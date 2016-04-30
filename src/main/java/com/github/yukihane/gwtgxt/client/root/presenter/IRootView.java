@@ -10,4 +10,14 @@ public interface IRootView extends LazyView {
      */
     void addListingView(IsWidget listingView);
 
+    /**
+     * @param widget
+     */
+    void openWindow(IsWidget widget);
+
+    /**
+     * @param widget
+     */
+    void closeWindow(IsWidget widget);
+
 }

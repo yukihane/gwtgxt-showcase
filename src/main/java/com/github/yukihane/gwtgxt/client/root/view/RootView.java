@@ -4,7 +4,6 @@ import com.github.yukihane.gwtgxt.client.root.presenter.IRootPresenter;
 import com.github.yukihane.gwtgxt.client.root.presenter.IRootView;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.mvp4g.client.view.ReverseViewInterface;
@@ -42,16 +41,22 @@ public class RootView extends DockLayoutPanel implements IRootView, ReverseViewI
         add(layout);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see
-     * com.github.yukihane.gwtgxt.client.root.presenter.IRootView#addListingView
-     * (com.google.gwt.user.client.ui.IsWidget)
-     */
     @Override
     public void addListingView(final IsWidget listingView) {
         layout.addWest(listingView, 128);
-        layout.add(new HTML("details"));
+    }
+
+    @Override
+    public void closeWindow(final IsWidget widget) {
+        if (widget == null) {
+            return;
+        }
+        layout.remove(widget);
+    }
+
+    @Override
+    public void openWindow(final IsWidget widget) {
+        layout.add(widget);
     }
 
 }
