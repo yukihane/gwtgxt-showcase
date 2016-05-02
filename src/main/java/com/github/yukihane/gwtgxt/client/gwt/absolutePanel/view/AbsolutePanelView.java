@@ -4,9 +4,13 @@ import com.github.yukihane.gwtgxt.client.gwt.absolutePanel.presenter.IAbsolutePa
 import com.github.yukihane.gwtgxt.client.gwt.absolutePanel.presenter.IAbsolutePanelView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.ResizeComposite;
 import com.google.gwt.user.client.ui.Widget;
 import com.mvp4g.client.view.ReverseViewInterface;
+import com.sencha.gxt.widget.core.client.TabPanel;
+import com.sencha.gxt.widget.core.client.event.BeforeCloseEvent;
+import com.sencha.gxt.widget.core.client.event.BeforeCloseEvent.BeforeCloseHandler;
 import java.util.logging.Logger;
 
 /**
@@ -21,6 +25,9 @@ public class AbsolutePanelView extends ResizeComposite
     }
 
     private static MyUiBinder UI_BINDER = GWT.create(MyUiBinder.class);
+
+    @UiField
+    TabPanel folder;
 
     private IAbsolutePanelPresenter presenter;
 
@@ -39,5 +46,12 @@ public class AbsolutePanelView extends ResizeComposite
         final Widget uiBind = UI_BINDER.createAndBindUi(this);
         LOGGER.finer(uiBind.getClass().getName());
         initWidget(uiBind);
+
+        folder.addBeforeCloseHandler(new BeforeCloseHandler <Widget>() {
+            @Override
+            public void onBeforeClose(final BeforeCloseEvent <Widget> event) {
+                LOGGER.finer("called: onBeforeClose");
+            }
+        });
     }
 }

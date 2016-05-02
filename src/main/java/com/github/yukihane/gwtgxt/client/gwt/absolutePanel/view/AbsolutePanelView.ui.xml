@@ -10,6 +10,11 @@
     .target { background-color: Skyblue; }
   </ui:style>
 
+  <ui:with type="com.sencha.gxt.widget.core.client.TabItemConfig"
+    field="shortTextTabConfig">
+    <ui:attributes text="Short Text" closable="true" />
+  </ui:with>
+
   <g:LayoutPanel>
     <g:layer>
       <g:FlowPanel>
@@ -34,6 +39,13 @@
           <g:Button text="GWT Button" />
           <button:TextButton text="GXT TextButton" />
         </g:FlowPanel>
+
+        <core:TabPanel ui:field="folder" width="450"
+          addStyleNames="margin-10">
+          <core:child config="{shortTextTabConfig}">
+            <g:Label text="TEXT" />
+          </core:child>
+        </core:TabPanel>
 
       </g:FlowPanel>
     </g:layer>
