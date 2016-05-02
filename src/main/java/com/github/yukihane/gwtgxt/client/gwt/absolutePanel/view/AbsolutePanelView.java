@@ -4,6 +4,7 @@ import com.github.yukihane.gwtgxt.client.gwt.absolutePanel.presenter.IAbsolutePa
 import com.github.yukihane.gwtgxt.client.gwt.absolutePanel.presenter.IAbsolutePanelView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.mvp4g.client.view.ReverseViewInterface;

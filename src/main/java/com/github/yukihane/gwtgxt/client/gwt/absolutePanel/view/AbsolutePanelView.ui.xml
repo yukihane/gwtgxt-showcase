@@ -3,10 +3,15 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
   xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-    <g:AbsolutePanel>
-      <g:at left='20' top='40'>
-        <g:Label>Lorem ipsum...</g:Label>
-      </g:at>
-      <g:Label>...dolores est.</g:Label>
-    </g:AbsolutePanel>
+  <g:AbsolutePanel>
+    <g:FlowPanel>
+      <g:Anchor text="Javadoc" target="_blank" href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html"/>
+    </g:FlowPanel>
+    <g:at left='20' top='40'>
+      <g:Label>Lorem ipsum...</g:Label>
+    </g:at>
+    <g:Label>...dolores est.</g:Label>
+  </g:AbsolutePanel>
+
 </ui:UiBinder>
+
