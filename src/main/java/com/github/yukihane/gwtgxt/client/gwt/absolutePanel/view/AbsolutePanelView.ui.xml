@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-  xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+  xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+  xmlns:core="urn:import:com.sencha.gxt.widget.core.client" xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+  xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar">
 
   <ui:style>
     .target { background-color: Skyblue; }
   </ui:style>
 
-  <g:AbsolutePanel addStyleNames='{style.target}'>
-    <g:FlowPanel>
-      <g:Anchor text="Javadoc" target="_blank"
-        href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html" />
-    </g:FlowPanel>
-    <g:at left='20' top='40'>
-      <g:Label>Lorem ipsum...</g:Label>
-    </g:at>
-    <g:Label>...dolores est.</g:Label>
-  </g:AbsolutePanel>
+  <g:LayoutPanel>
+    <g:layer>
+      <g:FlowPanel>
+        <g:AbsolutePanel addStyleNames='{style.target}'>
+          <g:FlowPanel>
+            <g:Anchor text="Javadoc" target="_blank"
+              href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html" />
+          </g:FlowPanel>
+          <g:at left='40' top='10'>
+            <g:Label>at内文章 - AbsolutePanel(パネルからはみ出ると表示されない)</g:Label>
+          </g:at>
+          <g:Label>通常ラベル - AbsolutePanel</g:Label>
+        </g:AbsolutePanel>
 
+        <g:CaptionPanel captionText="CaptionPanelのキャプション"
+          addStyleNames='{style.target}'>
+          <g:Anchor text="Javadoc" target="_blank"
+            href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/CaptionPanel.html" />
+        </g:CaptionPanel>
+
+        <g:FlowPanel>
+          <g:Button text="GWT Button" />
+          <button:TextButton text="GXT TextButton" />
+        </g:FlowPanel>
+
+      </g:FlowPanel>
+    </g:layer>
+  </g:LayoutPanel>
 </ui:UiBinder>
 
