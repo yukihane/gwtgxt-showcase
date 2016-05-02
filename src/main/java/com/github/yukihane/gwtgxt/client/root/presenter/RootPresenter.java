@@ -30,16 +30,13 @@ public class RootPresenter extends LazyPresenter<IRootView, RootEventBus> implem
             view.closeWindow(openedWindow);
         }
 
-        switch (type) {
-        case INPUT_FORM:
-            eventBus.prepareInputForm();
-            break;
-        default:
-            throw new UnsupportedOperationException("Not defined: " + type);
-        }
+        eventBus.prepare(type);
     }
 
-    public void onCompletePreparation(IsWidget view) {
+    public void onCompletePreparation(final IsWidget widget) {
         LOGGER.finer("called: onCompletePreparation");
+
+        view.openWindow(widget);
+        openedWindow = widget;
     }
 }

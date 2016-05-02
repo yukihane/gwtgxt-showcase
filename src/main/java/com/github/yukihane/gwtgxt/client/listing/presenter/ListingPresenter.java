@@ -24,7 +24,12 @@ public class ListingPresenter extends LazyPresenter <IListingView, RootEventBus>
     @Override
     public void actInputFormClicked() {
         LOGGER.finer("called: actInputFormClicked");
-
         eventBus.openWindow(WindowType.INPUT_FORM);
+    }
+
+    @Override
+    public void actGwtClicked() {
+        LOGGER.finer("called: actInputFormClicked");
+        eventBus.openWindow(WindowType.GWT);
     }
 }

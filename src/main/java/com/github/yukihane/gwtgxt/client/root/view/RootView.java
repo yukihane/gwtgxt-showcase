@@ -51,12 +51,12 @@ public class RootView extends DockLayoutPanel implements IRootView, ReverseViewI
         if (widget == null) {
             return;
         }
-        layout.remove(widget);
+        layout.remove(widget.asWidget());
     }
 
     @Override
     public void openWindow(final IsWidget widget) {
-        layout.add(widget);
+        layout.add(widget.asWidget());
     }
 
 }

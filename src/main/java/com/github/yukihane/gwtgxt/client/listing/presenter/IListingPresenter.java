@@ -7,4 +7,9 @@ public interface IListingPresenter {
      */
     void actInputFormClicked();
 
+    /**
+     * GWTボタンが押された.
+     */
+    void actGwtClicked();
+
 }
