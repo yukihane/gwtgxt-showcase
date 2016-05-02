@@ -3,9 +3,14 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
   xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-  <g:AbsolutePanel>
+  <ui:style>
+    .target { background-color: Skyblue; }
+  </ui:style>
+
+  <g:AbsolutePanel addStyleNames='{style.target}'>
     <g:FlowPanel>
-      <g:Anchor text="Javadoc" target="_blank" href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html"/>
+      <g:Anchor text="Javadoc" target="_blank"
+        href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html" />
     </g:FlowPanel>
     <g:at left='20' top='40'>
       <g:Label>Lorem ipsum...</g:Label>
