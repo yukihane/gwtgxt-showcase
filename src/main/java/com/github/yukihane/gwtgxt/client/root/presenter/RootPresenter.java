@@ -39,7 +39,9 @@ public class RootPresenter extends LazyPresenter<IRootView, RootEventBus> implem
         }
     }
 
-    public void onCompletePreparation(IsWidget view) {
+    public void onCompletePreparation(final IsWidget widget) {
         LOGGER.finer("called: onCompletePreparation");
+        view.openWindow(widget);
+        openedWindow = widget;
     }
 }
