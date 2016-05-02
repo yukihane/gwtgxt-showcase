@@ -23,7 +23,7 @@ public class ListingView extends Composite implements IListingView, ReverseViewI
     Button inputForm;
 
     @UiField
-    Button gwtButton;
+    Button gwtAbsolutePanelButton;
 
     private IListingPresenter presenter;
 
@@ -49,7 +49,7 @@ public class ListingView extends Composite implements IListingView, ReverseViewI
             }
         });
 
-        gwtButton.addClickHandler(new ClickHandler() {
+        gwtAbsolutePanelButton.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(final ClickEvent event) {
                 presenter.actGwtClicked();

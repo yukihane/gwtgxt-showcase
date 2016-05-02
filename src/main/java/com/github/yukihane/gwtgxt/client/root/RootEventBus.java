@@ -1,6 +1,6 @@
 package com.github.yukihane.gwtgxt.client.root;
 
-import com.github.yukihane.gwtgxt.client.gwt.presenter.GwtPresenter;
+import com.github.yukihane.gwtgxt.client.gwt.absolutePanel.presenter.AbsolutePanelPresenter;
 import com.github.yukihane.gwtgxt.client.input_form.presenter.InputFormPresenter;
 import com.github.yukihane.gwtgxt.client.listing.presenter.ListingPresenter;
 import com.github.yukihane.gwtgxt.client.root.model.WindowType;
@@ -36,6 +36,6 @@ public interface RootEventBus extends EventBusWithLookup {
     @Event(handlers = RootPresenter.class)
     void completePreparation(IsWidget view);
 
-    @Event(handlers = { InputFormPresenter.class, GwtPresenter.class })
+    @Event(handlers = { InputFormPresenter.class, AbsolutePanelPresenter.class })
     void prepare(WindowType type);
 }

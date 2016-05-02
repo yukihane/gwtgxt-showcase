@@ -5,7 +5,7 @@
 
     <g:VerticalPanel width="100%">
       <g:Button ui:field="inputForm" text="input form" width="100%" />
-      <g:Button ui:field="gwtButton" text="input form" width="100%" />
+      <g:Button ui:field="gwtAbsolutePanelButton" text="GWT:AbsolutePanel" width="100%" />
     </g:VerticalPanel>
 
 </ui:UiBinder>
