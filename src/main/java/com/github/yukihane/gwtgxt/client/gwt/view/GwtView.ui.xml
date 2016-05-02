@@ -3,9 +3,10 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
   xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-  <g:VerticalPanel width="100%">
-    <g:Button  text="input form" width="100%" />
-    <g:Button  text="input form" width="100%" />
-  </g:VerticalPanel>
-
+    <g:AbsolutePanel>
+      <g:at left='20' top='40'>
+        <g:Label>Lorem ipsum...</g:Label>
+      </g:at>
+      <g:Label>...dolores est.</g:Label>
+    </g:AbsolutePanel>
 </ui:UiBinder>
