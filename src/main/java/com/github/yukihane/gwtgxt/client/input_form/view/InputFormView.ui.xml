@@ -6,8 +6,7 @@
   xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:core="urn:import:com.sencha.gxt.widget.core.client"
   xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar">
 
-  <container:CssFloatLayoutContainer width='100%'
-    height='100%'>
+  <container:VerticalLayoutContainer width='100%'>
     <g:Button ui:field="inputForm" text="input form" width="100%" />
-  </container:CssFloatLayoutContainer>
+  </container:VerticalLayoutContainer>
 </ui:UiBinder>
