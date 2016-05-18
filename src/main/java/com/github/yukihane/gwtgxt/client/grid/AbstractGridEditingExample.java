@@ -38,6 +38,7 @@
  */
 package com.github.yukihane.gwtgxt.client.grid;
 
+import com.github.yukihane.gwtgxt.client.store.MyListStore;
 import com.google.gwt.cell.client.DateCell;
 import com.google.gwt.cell.client.TextInputCell;
 import com.google.gwt.core.client.GWT;
@@ -56,7 +57,6 @@ import com.sencha.gxt.cell.core.client.form.ComboBoxCell.TriggerAction;
 import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.core.client.util.DateWrapper;
 import com.sencha.gxt.data.shared.Converter;
-import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
 import com.sencha.gxt.data.shared.PropertyAccess;
 import com.sencha.gxt.data.shared.StringLabelProvider;
@@ -182,7 +182,7 @@ public abstract class AbstractGridEditingExample implements IsWidget {
 
             final ColumnModel <Plant> columns = new ColumnModel <Plant>(l);
 
-            final ListStore <Plant> store = new ListStore <Plant>(properties.key());
+            final MyListStore <Plant> store = new MyListStore <Plant>(properties.key());
             store.addAll(TestData.getPlants());
 
             grid = new Grid <Plant>(store, columns);
