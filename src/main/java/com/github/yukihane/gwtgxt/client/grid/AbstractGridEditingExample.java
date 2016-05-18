@@ -70,9 +70,11 @@ import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
 import com.sencha.gxt.widget.core.client.form.CheckBox;
 import com.sencha.gxt.widget.core.client.form.DateField;
 import com.sencha.gxt.widget.core.client.form.DateTimePropertyEditor;
+import com.sencha.gxt.widget.core.client.form.IsField;
 import com.sencha.gxt.widget.core.client.form.PropertyEditor;
 import com.sencha.gxt.widget.core.client.form.SimpleComboBox;
 import com.sencha.gxt.widget.core.client.form.TextField;
+import com.sencha.gxt.widget.core.client.form.validator.EmptyValidator;
 import com.sencha.gxt.widget.core.client.grid.ColumnConfig;
 import com.sencha.gxt.widget.core.client.grid.ColumnModel;
 import com.sencha.gxt.widget.core.client.grid.Grid;
@@ -228,7 +230,9 @@ public abstract class AbstractGridEditingExample implements IsWidget {
             dateField.setClearValueOnParseError(false);
 
             final GridEditing <Plant> editing = createGridEditing(grid);
-            editing.addEditor(nameColumn, new TextField());
+            final TextField nameField = new TextField();
+            nameField.addValidator(new EmptyValidator <String>());
+            editing.addEditor(nameColumn, nameField);
             editing.addEditor(lightColumn, lightConverter, lightCombo);
             editing.addEditor(dateColumn, dateField);
             editing.addEditor(indoorColumn, new CheckBox());
