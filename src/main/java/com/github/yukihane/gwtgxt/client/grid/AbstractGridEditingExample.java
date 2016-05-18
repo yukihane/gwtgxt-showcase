@@ -39,6 +39,7 @@
 package com.github.yukihane.gwtgxt.client.grid;
 
 import com.google.gwt.cell.client.DateCell;
+import com.google.gwt.cell.client.TextInputCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.Editor.Path;
 import com.google.gwt.i18n.client.DateTimeFormat;
@@ -151,6 +152,8 @@ public abstract class AbstractGridEditingExample implements IsWidget {
                 new ColumnConfig <Plant, Boolean>(properties.indoor(), 65, "Indoor");
             final ColumnConfig <Plant, Double> priceColumn =
                 new ColumnConfig <Plant, Double>(properties.price(), 75, "Price");
+
+            nameColumn.setCell(new TextInputCell());
 
             dateColumn.setCell(new DateCell(DateTimeFormat.getFormat("yyyy MMM dd")));
             indoorColumn.setCell(new SimpleSafeHtmlCell <Boolean>(new AbstractSafeHtmlRenderer <Boolean>() {
