@@ -25,7 +25,7 @@ public class MyListStore<M> extends ListStore <M> {
 
     protected native final Map <String, Record> getRecords()
     /*-{
-        return this.@java.util.Map::records;
+        return this.@com.sencha.gxt.data.shared.Store::records;
     }-*/;
 
     public class MyRecord extends Record {
