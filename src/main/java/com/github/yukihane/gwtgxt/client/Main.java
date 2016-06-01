@@ -16,11 +16,15 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.sencha.gxt.widget.core.client.form.TextField;
+import java.util.logging.Logger;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Main implements EntryPoint {
+
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     /**
      * The message displayed to the user when the server cannot be reached or
      * returns an error.
@@ -95,7 +99,7 @@ public class Main implements EntryPoint {
              */
             @Override
             public void onClick(final ClickEvent event) {
-                sendNameToServer();
+                // sendNameToServer();
             }
 
             /**
@@ -104,7 +108,9 @@ public class Main implements EntryPoint {
             @Override
             public void onKeyUp(final KeyUpEvent event) {
                 if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-                    sendNameToServer();
+                    LOGGER.info("value: " + nameField.getValue());
+                    LOGGER.info("currentValue: " + nameField.getCurrentValue());
+                    // sendNameToServer();
                 }
             }
 
