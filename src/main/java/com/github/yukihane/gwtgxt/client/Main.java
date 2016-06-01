@@ -14,8 +14,8 @@ import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.sencha.gxt.widget.core.client.form.TextField;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -42,7 +42,7 @@ public class Main implements EntryPoint {
     @Override
     public void onModuleLoad() {
         final Button sendButton = new Button(messages.sendButton());
-        final TextBox nameField = new TextBox();
+        final TextField nameField = new TextField();
         nameField.setText(messages.nameField());
         final Label errorLabel = new Label();
 
@@ -56,7 +56,7 @@ public class Main implements EntryPoint {
         RootPanel.get("errorLabelContainer").add(errorLabel);
 
         // Focus the cursor on the name field when the app loads
-        nameField.setFocus(true);
+        nameField.focus();
         nameField.selectAll();
 
         // Create the popup dialog box
