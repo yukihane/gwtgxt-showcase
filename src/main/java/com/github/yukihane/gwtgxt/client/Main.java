@@ -8,6 +8,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
@@ -18,6 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.sencha.gxt.widget.core.client.event.BlurEvent;
 import com.sencha.gxt.widget.core.client.event.BlurEvent.BlurHandler;
 import com.sencha.gxt.widget.core.client.form.TextField;
+import java.util.Date;
 import java.util.logging.Logger;
 
 /**
@@ -62,8 +65,9 @@ public class Main implements EntryPoint {
         RootPanel.get("errorLabelContainer").add(errorLabel);
 
         // Focus the cursor on the name field when the app loads
-        nameField.focus();
-        nameField.selectAll();
+        // nameField.focus();
+        // nameField.selectAll();
+        nameField.setValue("hello");
 
         // Create the popup dialog box
         final DialogBox dialogBox = new DialogBox();
@@ -101,7 +105,12 @@ public class Main implements EntryPoint {
              */
             @Override
             public void onClick(final ClickEvent event) {
-                // sendNameToServer();
+                // setValue と setText の違いなど
+                // nameField.setValue(new Date().toString());
+                nameField.setText(new Date().toString());
+                // nameField.finishEditing();
+                LOGGER.info("value: " + nameField.getValue());
+                LOGGER.info("currentValue: " + nameField.getCurrentValue());
             }
 
             /**
@@ -164,6 +173,12 @@ public class Main implements EntryPoint {
             @Override
             public void onBlur(final BlurEvent event) {
                 LOGGER.info("blur");
+            }
+        });
+        nameField.addValueChangeHandler(new ValueChangeHandler <String>() {
+            @Override
+            public void onValueChange(final ValueChangeEvent <String> event) {
+                LOGGER.info("value changed");
             }
         });
 
