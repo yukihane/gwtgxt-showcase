@@ -134,22 +134,36 @@ public abstract class AbstractGridEditingExample implements IsWidget {
 
     private static final PlaceProperties properties = GWT.create(PlaceProperties.class);
 
-    protected Grid <Plant> grid;
+    public Grid <Plant> grid;
+
+    public ColumnConfig <Plant, String> nameColumn;
+
+    public ColumnConfig <Plant, String> lightColumn;
+
+    public ColumnConfig <Plant, Date> dateColumn;
+
+    public ColumnConfig <Plant, Boolean> indoorColumn;
+
+    public ColumnConfig <Plant, Double> priceColumn;
 
     protected ContentPanel panel;
+
+    public Grid <Plant> getGrid() {
+        return grid;
+    }
 
     @Override
     public Widget asWidget() {
         if (panel == null) {
-            final ColumnConfig <Plant, String> nameColumn =
+            nameColumn =
                 new ColumnConfig <Plant, String>(properties.name(), 220, "Name");
-            final ColumnConfig <Plant, String> lightColumn =
+            lightColumn =
                 new ColumnConfig <Plant, String>(properties.light(), 120, "Light");
-            final ColumnConfig <Plant, Date> dateColumn =
+            dateColumn =
                 new ColumnConfig <Plant, Date>(properties.available(), 95, "Date");
-            final ColumnConfig <Plant, Boolean> indoorColumn =
+            indoorColumn =
                 new ColumnConfig <Plant, Boolean>(properties.indoor(), 65, "Indoor");
-            final ColumnConfig <Plant, Double> priceColumn =
+            priceColumn =
                 new ColumnConfig <Plant, Double>(properties.price(), 75, "Price");
 
             dateColumn.setCell(new DateCell(DateTimeFormat.getFormat("yyyy MMM dd")));
