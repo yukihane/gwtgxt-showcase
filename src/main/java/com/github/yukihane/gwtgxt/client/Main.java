@@ -15,6 +15,8 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.sencha.gxt.widget.core.client.event.BlurEvent;
+import com.sencha.gxt.widget.core.client.event.BlurEvent.BlurHandler;
 import com.sencha.gxt.widget.core.client.form.TextField;
 import java.util.logging.Logger;
 
@@ -158,5 +160,12 @@ public class Main implements EntryPoint {
         final MyHandler handler = new MyHandler();
         sendButton.addClickHandler(handler);
         nameField.addKeyUpHandler(handler);
+        nameField.addBlurHandler(new BlurHandler() {
+            @Override
+            public void onBlur(final BlurEvent event) {
+                LOGGER.info("blur");
+            }
+        });
+
     }
 }
