@@ -5,17 +5,6 @@
 
 <web-app>
 
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.github.yukihane.gwtgxt.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/Main/greet</url-pattern>
-  </servlet-mapping>
-
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Main.html</welcome-file>
