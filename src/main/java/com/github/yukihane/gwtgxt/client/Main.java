@@ -19,7 +19,7 @@ public class Main implements EntryPoint {
     @Override
     public void onModuleLoad() {
         final Frame panel = new Frame();
-        panel.setUrl("hello.html");
+        panel.setUrl("angular/index.html");
         final TabPanel tab = new TabPanel();
         tab.add(panel, "hello");
         final ContentPanel cp = new ContentPanel();
